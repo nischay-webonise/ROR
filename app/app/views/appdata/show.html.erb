@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+  <strong>Name:</strong>
+  <%= @appdatum.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @appdatum.description %>
+</p>
+
+<p>
+  <strong>phone number:</strong>
+  <%= @appdatum.phone_number %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @appdatum.address %>
+</p>
+
+
+<%= link_to 'Edit', edit_appdatum_path(@appdatum) %> |
+<%= link_to 'Back', appdata_path %>
