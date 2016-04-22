@@ -13,6 +13,8 @@ class AppdataController < ApplicationController
     @appdatum=Appdatum.find(params[:id])
   end
 
+  def abc
+  end
   # GET /appdata/new
   def new
     @appdatum = Appdatum.new
