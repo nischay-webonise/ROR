@@ -1,0 +1,23 @@
+<h1> Cart</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Info</th>
+      <th>Price</th>
+      <th>Quantitity</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= @order.name %></td>
+        <td><%= @order.info %></td>
+        <td><%= @order.price %></td>
+        <td><%= form_for (@order) :url => order_path do |f| %>
+        <%= f.text_field :quantity %>
+        <%= f.submit %>
+        <% end %>
+        </td>
+      </tr>
+  </tbody>
+</table>
