@@ -1,0 +1,26 @@
+<h1>Your Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @x.name %></td>
+        <td><%= @x.price %></td>
+        <td><%= form_for @order do |f| %>
+
+         <%= f.hidden_field :product_id, :value => @x.id %>
+        <%= f.number_field :quantity %>
+        <%= f.submit 'Buy Now' %>
+        <% end %>
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Orders', orders_path %>

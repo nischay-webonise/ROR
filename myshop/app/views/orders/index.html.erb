@@ -1,0 +1,24 @@
+<h1>Products Bought</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.product.name %></td>
+        <td><%= order.product.price %></td>
+        <td><%= order.quantity %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Main Page', root_path %><br>
+<%= link_to 'Products', products_path %>

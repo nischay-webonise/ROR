@@ -1,22 +1,50 @@
-<%= form_for @product do |f| %>
-  <p>
-  <%= f.label :Product %>
-  <%= f.text_area :name %>
-  </p>
-  <p>
-  <%= f.label :info %>
-  <%= f.text_area :info %>
-  </p>
-    <p>
-  <%= f.label :quantity %>
-  <%= f.text_area :quantity %>
-  </p>
- <p>
-  <%= f.label :price %>
-  <%= f.text_area :price %>
-  </p>
 
-  <div>
-    <%= f.submit %>
+<%= form_for @product , html: {class: "form-horizontal.center"} do |f| %>
+<% if @product.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@product.errors.count, "error") %> prohibited
+      this product from being saved:</h2>
+    <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="form-group" >
+    <%= f.label :Product , html:{class: "col-sm-2 control-label"}%>
+    <div class="col-sm-10">
+      <%= f.text_area :name %>
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <%= f.label :info , html:{class: "col-sm-2 control-label"}%>
+    <div class="col-sm-10">
+      <%= f.text_area :info %>
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <%= f.label :price, html:{class: "col-sm-2 control-label"}%>
+    <div class="col-sm-10">
+      <%= f.text_area :price %>
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <%= f.label :Quantity , html:{class: "col-sm-2 control-label"}%>
+    <div class="col-sm-10">
+      <%= f.text_area :quantity %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+     <%= f.submit  html:{class: "btn btn-default"}%>
+    </div>
   </div>
 <% end %>
+
+<%= link_to 'Main Page', root_path %><br>
+<%= link_to 'Products', products_path %>
